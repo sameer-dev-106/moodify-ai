@@ -70,7 +70,7 @@ It combines computer vision and intelligent recommendation systems to deliver a 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/moodify-ai.git
+git clone https://github.com/sameer-dev-106/moodify-ai
 cd moodify-ai
 ```
 
@@ -81,13 +81,6 @@ cd moodify-ai
 ```bash
 cd backend
 npm install
-```
-
-Create a `.env` file:
-
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
 ```
 
 Run backend:
