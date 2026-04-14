@@ -69,7 +69,7 @@ async function loginUser(req, res) {
             { email },
             { username }
         ]
-    });
+    }).select("+password");
 
     if (!user) {
         res.status(400).json({
