@@ -1,8 +1,13 @@
-import "./App.css";
-import FaceExpression from "./features/Expression/components/FaceExpression";
+import { RouterProvider } from "react-router";
+import { router } from "./app.routes";
 
-function App() {
-  return <FaceExpression />;
+import "./styles/global.scss";
+
+
+const App = () => {
+  return (
+    <RouterProvider router={router} />
+  )
 }
 
-export default App;
+export default App
