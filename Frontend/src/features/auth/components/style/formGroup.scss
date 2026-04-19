@@ -1,0 +1,13 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    input {
+        padding: 1em;
+        border-radius: 1em;
+
+        border: none;
+        outline: none;
+    }
+}

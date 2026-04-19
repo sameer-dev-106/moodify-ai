@@ -1,0 +1,41 @@
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    .form-container {
+        min-width: 450px;
+
+        padding: 2em;
+        background: #333;
+        border-radius: 0.5em;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5em;
+            font-size: 1em;
+            font-weight: 600;
+
+            button {
+                width: 100%;
+                padding: 0.5em;
+
+                border: none;
+                outline: none;
+
+                border-radius: 0.5em;
+                background: #dc3030;
+                color: #f0f0f0;
+
+                margin-top: 0.5em;
+                font-size: 1.2em;
+            }
+        }
+    }
+}
