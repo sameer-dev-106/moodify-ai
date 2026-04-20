@@ -1,7 +1,7 @@
 import React from "react";
 import "./style/formGroup.scss"
 
-const FormGroup = ({ type, label, placeholder }) => {
+const FormGroup = ({ type, label, value, onChange, placeholder }) => {
   return (
     <div className="form-group">
       <label htmlFor={label}>{label}</label>
@@ -9,6 +9,8 @@ const FormGroup = ({ type, label, placeholder }) => {
         type={type}
         id={label}
         name={label}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder}
         required
       />
