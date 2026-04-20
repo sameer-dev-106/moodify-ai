@@ -36,6 +36,7 @@ export const useAuth = () => {
         }
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     async function handleGetMe() {
         setLoading(true);
         try {
@@ -68,7 +69,7 @@ export const useAuth = () => {
 
     useEffect(() => {
         handleGetMe();
-    }, [])
+    }, [handleGetMe])
 
     return ({
         user, loading, handleRegister, handleLogin, handleGetMe, handleLogout
