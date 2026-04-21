@@ -1,10 +1,11 @@
 import { register, login, getMe, logout } from "../services/auth.api";
 import { useContext, useEffect } from "react";
 import AuthContext from "../auth.context";
+import { useLocation } from "react-router";
 
 export const useAuth = () => {
     const context = useContext(AuthContext);
-    const { user, setUser, loading, setLoading } = context
+    const { user, setUser, loading, setLoading } = context;
 
     async function handleRegister(username, email, password) {
         setLoading(true);
@@ -36,17 +37,18 @@ export const useAuth = () => {
         }
     }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     async function handleGetMe() {
         setLoading(true);
         try {
             const data = await getMe();
             if (data?.user) {
-                setUser(data.user)
+                setUser(data.user);
             }
-            return data.user;
+            return data?.user;
         } catch (error) {
-            throw error?.response?.data?.message || "Something went wrong";
+            setUser(null);
+            console.log(error);
+            return null;
         } finally {
             setLoading(false);
         }
@@ -67,9 +69,13 @@ export const useAuth = () => {
         }
     }
 
+    const location = useLocation();
+
     useEffect(() => {
-        handleGetMe();
-    }, [handleGetMe])
+        if (location.pathname !== "/login") {
+            handleGetMe();
+        }
+    }, []);
 
     return ({
         user, loading, handleRegister, handleLogin, handleGetMe, handleLogout
